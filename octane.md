@@ -139,6 +139,20 @@ If the `--log-level` option is explicitly passed to the `php artisan octane:star
 
 You may consult [the official FrankenPHP documentation](https://frankenphp.dev/docs/docker/) for more information on running FrankenPHP with Docker.
 
+<a name="frankenphp-mercure-support"></a>
+#### FrankenPHP Mercure Support
+
+FrankenPHP ships with built-in support for [Mercure](https://mercure.rocks), a modern and convenient replacement for WebSockets. To enable it, add the following lines to your `octane.php` configuration file:
+
+```php
+'mercure' => [
+    'publisher_jwt' => env('MERCURE_PUBLISHER_JWT'),
+    'subscriber_jwt' => env('MERCURE_SUBSCRIBER_JWT'),
+],
+```
+
+Make sure to set the `MERCURE_PUBLISHER_JWT` and `MERCURE_SUBSCRIBER_JWT` environment variables before starting the server.
+
 <a name="roadrunner"></a>
 ### RoadRunner
 
